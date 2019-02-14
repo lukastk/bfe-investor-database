@@ -19,6 +19,8 @@ def shutdown_session(exception=None):
     db_session.remove()
 
 @app.route('/')
+@app.route('/index.html')
+@app.route('/index.htm')
 def index():
     investors = Investor.query.all()
     return render_template('index.html', investors=investors)

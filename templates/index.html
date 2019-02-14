@@ -25,6 +25,7 @@
                         <th scope="col">Website</th>
                         <th scope="col">Description</th>
                         <th scope="col">Additional Info</th>
+			<th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,7 @@
                         <td class="website-data"> {{ investor.website }} </td>
                         <td class="description-data"> {{ investor.description }} </td>
                         <td class="additional_info-data"> {{ investor.additional_info }} </td>
+                        <td> <a href="/edit/{{ investor.id }}">Edit</a> </td>
                     </tr>
                 {% endfor %}
                 </tbody>
