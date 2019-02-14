@@ -16,39 +16,32 @@ $('.datetime').datetimepicker({
 });
 
 // Initialise Pusher
-const pusher = new Pusher('<PUSHER_KEY>', {
-    cluster: '<PUSHER_CLUSTER>',
+const pusher = new Pusher('3bec6d2ac2247ecbd32a', {
+    cluster: 'eu',
     encrypted: true
 });
 
 var channel = pusher.subscribe('table');
 
 channel.bind('new-record', (data) => {
-
-    const check_in = moment(`${data.data.check_in}`, 'DD/MM/YYYY hh:mm a').format('YYYY-MM-DD hh:mm:ss a')
-    const departure = moment(`${data.data.departure}`, 'DD/MM/YYYY hh:mm a').format('YYYY-MM-DD hh:mm:ss a')
-   $('#flights').append(`
+   $('#investors').append(`
         <tr id="${data.data.id}">
-            <th scope="row"> ${data.data.flight} </th>
-            <td> ${data.data.destination} </td>
-            <td> ${check_in} </td>
-            <td> ${departure} </td>
-            <td> ${data.data.status} </td>
+            <th scope="row"> ${data.data.organisation} </th>
+            <td> ${data.data.region} </td>
+            <td> ${data.data.website} </td>
+            <td> ${data.data.description} </td>
+            <td> ${data.data.additional_info} </td>
         </tr>
    `)
 });
 
 channel.bind('update-record', (data) => {
-
-    const check_in = moment(`${data.data.check_in}`, 'DD/MM/YYYY hh:mm a').format('YYYY-MM-DD hh:mm:ss a')
-    const departure = moment(`${data.data.departure}`, 'DD/MM/YYYY hh:mm a').format('YYYY-MM-DD hh:mm:ss a')
-
     $(`#${data.data.id}`).html(`
-        <th scope="row"> ${data.data.flight} </th>
-        <td> ${data.data.destination} </td>
-        <td> ${check_in} </td>
-        <td> ${departure} </td>
-        <td> ${data.data.status} </td>
+        <th scope="row"> ${data.data.organisation} </th>
+        <td> ${data.data.region} </td>
+        <td> ${data.data.website} </td>
+        <td> ${data.data.description} </td>
+        <td> ${data.data.additional_info} </td>
     `)
 
  });

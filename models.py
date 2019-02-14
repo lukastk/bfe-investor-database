@@ -2,22 +2,22 @@ from sqlalchemy import Column, Integer, String, DateTime
 from database import Base
 from datetime import datetime
 
-class Flight(Base):
-    __tablename__ = 'flights'
+class Investor(Base):
+    __tablename__ = 'investors'
 
     id = Column(Integer, primary_key=True)
-    flight = Column(String(50))
-    destination = Column(String(120))
-    check_in = Column(DateTime, default=datetime.utcnow)
-    departure = Column(DateTime, default=datetime.utcnow)
-    status = Column(String(120))
+    organisation = Column(String(50))
+    region = Column(String(120))
+    website = Column(String(120))
+    description = Column(String(1000))
+    additional_info = Column(String(1000))
 
-    def __init__(self, flight=None, destination=None, check_in=None, departure=None, status=None):
-        self.flight = flight
-        self.destination = destination
-        self.check_in = check_in
-        self.departure = departure
-        self.status = status
+    def __init__(self, organisation=None, region=None, website=None, description=None, additional_info=None):
+        self.organisation = organisation
+        self.region = region
+        self.website = website
+        self.description = description
+        self.additional_info = additional_info
 
     def __repr__(self):
-        return '<Flight %r>' % (self.flight)
+        return '<Organisation %r>' % (self.organisation)

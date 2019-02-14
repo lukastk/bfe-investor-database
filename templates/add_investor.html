@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="POST" id="target">
+        <div class="form-group">
+            <input type="text" class="form-control" name="organisation" placeholder="Organisation">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="region" placeholder="Region">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="website" placeholder="Website">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="description" placeholder="Description">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="additional_info" placeholder="Additional Info">
+        </div>
+
+        <button type="submit" class="btn btn-block btn-primary">Submit</button>
+    </form>
+
+    <br />
+
+    <!--<div class="table-responsive">
+        <table class="table" id="investors">
+            <thead>
+                <tr>
+                    <th scope="col">Organisation</th>
+                    <th scope="col">Region</th>
+                    <th scope="col">Website</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Additional Info</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for investor in investors %}
+                <tr id={{ investor.id }}>
+                    <th scope="row">{{ investor.organisation }}</th>
+                    <td> {{investor.region }} </td>
+                    <td> {{ investor.website }} </td>
+                    <td> {{ investor.description }} </td>
+                    <td> {{ investor.additional_info }} </td>
+                    <td> <a href="/edit/{{ investor.id }}">Edit</a> </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>-->
+{% endblock %}

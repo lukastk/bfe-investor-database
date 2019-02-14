@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="POST" id="target">
+        <div class="form-group">
+            <input type="text" class="form-control" name="organisation" value="{{ data.organisation }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="region" value="{{ data.region }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="website" value="{{ data.website }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="description" value="{{ data.description }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="additional_info" value="{{ data.additional_info }}">
+        </div>
+
+        <button type="submit" class="btn btn-block btn-primary">Update</button>
+    </form>
+{% endblock %}

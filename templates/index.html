@@ -1,26 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="chat-container" style="overflow: auto; max-height: 80vh">
+
+  <script src="{{ url_for('static', filename='search.js')}}"></script>
+
+    <div class="searcher">
+      <h3>Search</h3>
+
+      <input id="keywords-search" type="text" class="form-control" placeholder="Keywords">
+      <input id="organisation-search" type="text" class="form-control" placeholder="Organisation">
+      <input id="region-search" type="text" class="form-control" placeholder="Region">
+      <button type="submit" onclick="search()" class="btn btn-block btn-primary">Search</button>
+    </div>
+
+    <h3>Investors</h3>
+
+    <div class="chat-container" style="overflow: auto;">
         <div class="table-responsive">
-            <table class="table" id="flights">
+            <table class="table" id="investors">
                 <thead>
                     <tr>
-                        <th scope="col">Flight</th>
-                        <th scope="col">Destination</th>
-                        <th scope="col">Check in</th>
-                        <th scope="col">departure</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Organisation</th>
+                        <th scope="col">Region</th>
+                        <th scope="col">Website</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Additional Info</th>
                     </tr>
                 </thead>
                 <tbody>
-                {% for flight in flights %}
-                    <tr id={{ flight.id }}>
-                        <th scope="row">{{ flight.flight }}</th>
-                        <td> {{flight.destination }} </td>
-                        <td> {{ flight.check_in }} </td>
-                        <td> {{ flight.departure }} </td>
-                        <td> {{ flight.status }} </td>
+                {% for investor in investors %}
+                    <tr id={{ investor.id }}>
+                        <th class="organisation-data" scope="row">{{ investor.organisation }}</th>
+                        <td class="region-data"> {{investor.region }} </td>
+                        <td class="website-data"> {{ investor.website }} </td>
+                        <td class="description-data"> {{ investor.description }} </td>
+                        <td class="additional_info-data"> {{ investor.additional_info }} </td>
                     </tr>
                 {% endfor %}
                 </tbody>
