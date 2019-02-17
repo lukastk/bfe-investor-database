@@ -6,6 +6,14 @@ h3 {
   margin-bottom: 30px;
 }
 
+a.nonhref {
+  color: #007bff !important;
+}
+a.nonhref:hover {
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
 .searcher {
   margin-top: 30px;
   margin-bottom: 30px;

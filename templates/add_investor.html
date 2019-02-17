@@ -1,27 +1,42 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     <form method="POST" id="target" style="margin-top: 50px">
         <div class="form-group">
             <input type="text" class="form-control" name="organisation" placeholder="Organisation">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="region" placeholder="Region">
-        </div>
-        <div class="form-group">
             <input type="text" class="form-control" name="website" placeholder="Website">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="description" placeholder="Description">
+            <input type="text" class="form-control" name="sector" placeholder="Sector">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="additional_info" placeholder="Additional Info">
+            <input type="text" class="form-control" name="type"  placeholder="Type">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="country" placeholder="Country">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="fund_currency" placeholder="Fund currency">
+        </div>
+        <div class="form-group">
+            <input type="text" pattern="\d*" class="form-control" name="fund_size_min" placeholder="Fund size min">
+        </div>
+        <div class="form-group">
+            <input type="text" pattern="\d*" class="form-control" name="fund_size_max" placeholder="Fund size max">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="crawl_urls" placeholder="Crawl URLs">
         </div>
 
         <button type="submit" class="btn btn-block btn-primary">Submit</button>
     </form>
 
     <br />
+
+    <a href="/"><button type="submit" class="btn btn-block btn-primary">Back</button></a>
 
     <!--<div class="table-responsive">
         <table class="table" id="investors">

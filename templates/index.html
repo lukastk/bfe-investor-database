@@ -2,7 +2,7 @@
 
 {% block content %}
 
-  <script src="{{ url_for('static', filename='search.js')}}"></script>
+  <script src="{{ url_for('static', filename='scripts.js')}}"></script>
 
     <div class="searcher">
       <h3>Search</h3>
@@ -11,6 +11,9 @@
       <input id="organisation-search" type="text" class="form-control" placeholder="Organisation">
       <input id="region-search" type="text" class="form-control" placeholder="Region">
       <button type="submit" onclick="search()" class="btn btn-block btn-primary">Search</button>
+
+      <br>
+      <a href="/add_investor"><button type="submit" class="btn btn-block btn-primary">Add new investor</button></a>
     </div>
 
     <h3>Investors</h3>
@@ -21,22 +24,29 @@
                 <thead>
                     <tr>
                         <th scope="col">Organisation</th>
-                        <th scope="col">Region</th>
-                        <th scope="col">Website</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Additional Info</th>
-			<th scope="col">Action</th>
+                        <th scope="col">Sector</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Fund size</th>
+			                  <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                 {% for investor in investors %}
                     <tr id={{ investor.id }}>
-                        <th class="organisation-data" scope="row">{{ investor.organisation }}</th>
-                        <td class="region-data"> {{investor.region }} </td>
-                        <td class="website-data"> {{ investor.website }} </td>
-                        <td class="description-data"> {{ investor.description }} </td>
-                        <td class="additional_info-data"> {{ investor.additional_info }} </td>
-                        <td> <a href="/edit/{{ investor.id }}">Edit</a> </td>
+                        <th class="organisation-data" scope="row"><a href="{{ investor.website }}">{{ investor.organisation }}</a></th>
+                        <td class="sector-data"> {{investor.sector }} </td>
+                        <td class="type-data"> {{investor.type }} </td>
+                        <td class="country-data"> {{investor.country }} </td>
+                        <td class="fund-data"> {{investor.fund_currency}} {{investor.fund_size_min}}-{{investor.fund_size_max}} </td>
+                        <td> <a href="/edit/{{ investor.id }}">Edit</a>
+                          <a class="nonhref" onclick="if (confirm('d')) { delete_entry({{ investor.id }}); $('#{{ investor.id }}').remove();}">Delete</a> </td>
+
+
+
+                        <script>
+                          document.getElementById("{{ investor.id }}").childNodes[9].innerHTML = "{{investor.fund_currency}} " + numToLabel({{investor.fund_size_min}}) + "-" + numToLabel({{investor.fund_size_max}});
+                        </script>
                     </tr>
                 {% endfor %}
                 </tbody>

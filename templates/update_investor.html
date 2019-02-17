@@ -6,16 +6,28 @@
             <input type="text" class="form-control" name="organisation" value="{{ data.organisation }}">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="region" value="{{ data.region }}">
-        </div>
-        <div class="form-group">
             <input type="text" class="form-control" name="website" value="{{ data.website }}">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="description" value="{{ data.description }}">
+            <input type="text" class="form-control" name="sector" value="{{ data.sector }}">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="additional_info" value="{{ data.additional_info }}">
+            <input type="text" class="form-control" name="type" value="{{ data.type }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="country" value="{{ data.country }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="fund_currency" value="{{ data.fund_currency }}">
+        </div>
+        <div class="form-group">
+            <input type="text" pattern="\d*" class="form-control" name="fund_size_min" value="{{ data.fund_size_min }}">
+        </div>
+        <div class="form-group">
+            <input type="text" pattern="\d*" class="form-control" name="fund_size_max" value="{{ data.fund_size_max }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="crawl_urls" value="{{ data.crawl_urls }}">
         </div>
 
         <button type="submit" class="btn btn-block btn-primary">Update</button>

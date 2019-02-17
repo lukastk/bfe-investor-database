@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method="POST" id="target"> 
+    <form method="POST" id="target">
         <div class="form-group">
             <input type="text" class="form-control" name="flight" placeholder="Flight">
         </div>
@@ -9,18 +9,18 @@
             <input type="text" class="form-control" name="destination" placeholder="Destination">
         </div>
         <div class="form-group">
-            <input 
-               type="text" 
-               class="form-control datetime" 
-               name="check_in" 
+            <input
+               type="text"
+               class="form-control datetime"
+               name="check_in"
                placeholder="Check in"
             >
         </div>
         <div class="form-group">
-            <input 
-              type="text" 
-              class="form-control datetime" 
-              name="departure" 
+            <input
+              type="text"
+              class="form-control datetime"
+              name="departure"
               placeholder="departure"
             >
         </div>
@@ -30,7 +30,7 @@
 
         <button type="submit" class="btn btn-block btn-primary">Submit</button>
     </form>
-    
+
     <br />
 
     <div class="table-responsive">

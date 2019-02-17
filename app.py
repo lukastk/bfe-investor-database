@@ -29,22 +29,30 @@ def index():
 def add_investor():
     if request.method == "POST":
         organisation = request.form["organisation"]
-        region = request.form["region"]
         website = request.form["website"]
-        description = request.form["description"]
-        additional_info = request.form["additional_info"]
+        sector = request.form["sector"]
+        fund_currency = request.form["fund_currency"]
+        fund_size_min = request.form["fund_size_min"]
+        fund_size_max = request.form["fund_size_max"]
+        country = request.form["country"]
+        type = request.form["type"]
+        crawl_urls = request.form["crawl_urls"]
 
-        new_investor = Investor(organisation, region, website, description, additional_info)
+        new_investor = Investor(organisation, website, sector, fund_currency, fund_size_min, fund_size_max, country, type, crawl_urls)
         db_session.add(new_investor)
         db_session.commit()
 
         data = {
             "id": new_investor.id,
             "organisation": organisation,
-            "region": region,
             "website": website,
-            "description": description,
-            "additional_info": additional_info}
+            "sector": sector,
+            "fund_currency": fund_currency,
+            "fund_size_min": fund_size_min,
+            "fund_size_max": fund_size_max,
+            "country" : country,
+            "type" : type,
+            "crawl_urls" : crawl_urls}
 
         pusher_client.trigger('table', 'new-record', {'data': data })
 
@@ -57,27 +65,36 @@ def add_investor():
 def update_record(id):
     if request.method == "POST":
         organisation = request.form["organisation"]
-        region = request.form["region"]
         website = request.form["website"]
-        description = request.form["description"]
-        additional_info = request.form["additional_info"]
+        sector = request.form["sector"]
+        fund_currency = request.form["fund_currency"]
+        fund_size_min = request.form["fund_size_min"]
+        fund_size_max = request.form["fund_size_max"]
+        type = request.form["type"]
+        crawl_urls = request.form["crawl_urls"]
 
         update_investor = Investor.query.get(id)
         update_investor.organisation = organisation
-        update_investor.region = region
         update_investor.website = website
-        update_investor.description = description
-        update_investor.additional_info = additional_info
+        update_investor.sector = sector
+        update_investor.fund_currency = fund_currency
+        update_investor.fund_size_min = fund_size_min
+        update_investor.fund_size_max = fund_size_max
+        update_investor.type = type
+        update_investor.crawl_urls = crawl_urls
 
         db_session.commit()
 
         data = {
             "id": id,
             "organisation": organisation,
-            "region": region,
             "website": website,
-            "description": description,
-            "additional_info": additional_info}
+            "sector": sector,
+            "fund_currency": fund_currency,
+            "fund_size_min": fund_size_min,
+            "fund_size_max": fund_size_max,
+            "type": type,
+            "crawl_urls": crawl_urls}
 
         pusher_client.trigger('table', 'update-record', {'data': data })
 
@@ -88,6 +105,11 @@ def update_record(id):
         #new_investor.departure = new_flight.departure.strftime("%d-%m-%Y %H:%M %p")
         return render_template('update_investor.html', data=new_investor)
 
+@app.route('/delete/<int:id>', methods = ['POST'])
+def delete_entry(id):
+    Investor.query.filter_by(id=id).delete()
+    db_session.commit()
+    return "success"
 
 # run Flask app
 if __name__ == "__main__":

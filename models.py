@@ -7,17 +7,26 @@ class Investor(Base):
 
     id = Column(Integer, primary_key=True)
     organisation = Column(String(50))
-    region = Column(String(120))
     website = Column(String(120))
-    description = Column(String(1000))
-    additional_info = Column(String(1000))
+    sector = Column(String(120))
+    fund_currency = Column(String(120))
+    fund_size_min = Column(Integer)
+    fund_size_max = Column(Integer)
+    country = Column(String(1000))
+    type = Column(String(1000))
+    crawl_urls = Column(String(1000))
 
-    def __init__(self, organisation=None, region=None, website=None, description=None, additional_info=None):
+    def __init__(self, organisation=None, website=None, sector=None, fund_currency=None,
+            fund_size_min=None, fund_size_max=None, country=None, type=None, crawl_urls=None):
         self.organisation = organisation
-        self.region = region
         self.website = website
-        self.description = description
-        self.additional_info = additional_info
+        self.sector = sector
+        self.fund_currency = fund_currency
+        self.fund_size_min = fund_size_min
+        self.fund_size_max = fund_size_max
+        self.country = country
+        self.type = type
+        self.crawl_urls = crawl_urls
 
     def __repr__(self):
         return '<Organisation %r>' % (self.organisation)
