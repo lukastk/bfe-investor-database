@@ -37,6 +37,7 @@ function autocomplete(inp, arr) {
           a.appendChild(b);
         }
       }
+      search();
   });
   /*execute a function presses a key on the keyboard:*/
   inp.addEventListener("keydown", function(e) {
@@ -62,6 +63,7 @@ function autocomplete(inp, arr) {
           if (x) x[currentFocus].click();
         }
       }
+      search();
   });
   function addActive(x) {
     /*a function to classify an item as "active":*/
