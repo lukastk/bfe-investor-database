@@ -2,19 +2,44 @@
 
 {% block content %}
 
+  <script src="{{ url_for('static', filename='datatree.js')}}"></script>
   <script src="{{ url_for('static', filename='scripts.js')}}"></script>
+  <script src="{{ url_for('static', filename='autocomplete.js')}}"></script>
 
     <div class="searcher">
       <h3>Search</h3>
 
-      <input id="keywords-search" type="text" class="form-control" placeholder="Keywords">
-      <input id="organisation-search" type="text" class="form-control" placeholder="Organisation">
-      <input id="region-search" type="text" class="form-control" placeholder="Region">
-      <button type="submit" onclick="search()" class="btn btn-block btn-primary">Search</button>
+      <input id="keywords-search" oninput="search()" type="text" class="form-control" placeholder="Keywords">
+      <input id="organisation-search" oninput="search()" type="text" class="form-control" placeholder="Organisation">
+
+      <form autocomplete="off">
+        <div class="autocomplete">
+          <input id="sector-search" oninput="search()" type="text" class="form-control" placeholder="Sector">
+        </div>
+      </form>
+
+      <input id="type-search" oninput="search()" type="text" class="form-control" placeholder="Type">
+
+      <form autocomplete="off">
+        <div class="autocomplete">
+          <input id="country-search" oninput="search()" type="text" class="form-control" placeholder="Country">
+        </div>
+      </form>
+
+      <input id="fund-currency-search" oninput="search()" type="text" class="form-control" placeholder="Fund Currency">
+      <input id="fund-size_min-search" oninput="search()" pattern="\d*" type="text" class="form-control" placeholder="Fund Size Minimum">
+      <input id="fund-size_max-search" oninput="search()" pattern="\d*" type="text" class="form-control" placeholder="Fund Size Maximum">
+
+      <!--<button type="submit" onclick="search()" class="btn btn-block btn-primary">Search</button>-->
 
       <br>
       <a href="/add_investor"><button type="submit" class="btn btn-block btn-primary">Add new investor</button></a>
     </div>
+
+    <script>
+      autocomplete(document.getElementById("sector-search"), sectors_all);
+      autocomplete(document.getElementById("country-search"), countries_all);
+    </script>
 
     <h3>Investors</h3>
 
@@ -38,11 +63,9 @@
                         <td class="sector-data"> {{investor.sector }} </td>
                         <td class="type-data"> {{investor.type }} </td>
                         <td class="country-data"> {{investor.country }} </td>
-                        <td class="fund-data"> {{investor.fund_currency}} {{investor.fund_size_min}}-{{investor.fund_size_max}} </td>
+                        <td class="fund-data" data-fundc="{{investor.fund_currency}}" data-fundmin="{{investor.fund_size_min}}" data-fundmax="{{investor.fund_size_max}}"> {{investor.fund_currency}} {{investor.fund_size_min}}-{{investor.fund_size_max}} </td>
                         <td> <a href="/edit/{{ investor.id }}">Edit</a>
                           <a class="nonhref" onclick="if (confirm('d')) { delete_entry({{ investor.id }}); $('#{{ investor.id }}').remove();}">Delete</a> </td>
-
-
 
                         <script>
                           document.getElementById("{{ investor.id }}").childNodes[9].innerHTML = "{{investor.fund_currency}} " + numToLabel({{investor.fund_size_min}}) + "-" + numToLabel({{investor.fund_size_max}});
