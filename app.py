@@ -98,7 +98,7 @@ def update_record(id):
 
         pusher_client.trigger('table', 'update-record', {'data': data })
 
-        return redirect("/index", code=302)
+        return redirect("/", code=302)
     else:
         new_investor = Investor.query.get(id)
         #new_investor.check_in = new_flight.check_in.strftime("%d-%m-%Y %H:%M %p")
