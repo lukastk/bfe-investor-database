@@ -1,0 +1,112 @@
+id,organisation,website,sector,fund_currency,fund_size_min,fund_size_max,country,type,crawl_urls
+1,The Africa Enterprise Challenge Fund (AECF),https://www.aecfafrica.org/,"agriculture, energy",USD,100000,1500000,"Burundi, Burundi and D, Cameroon, D.R. Congo, Ethiopia,Gambia, Ghana, IvoryCoast, Kenya, Kenya & Tanz, Liberia, Malawi, Mali, Mozambique, Nigeria, Rwanda, Senegal, Sierra Leone, Somalia, South Africa, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe",,"https://www.aecfafrica.org/index.php/about-us/who-we-are
+https://www.aecfafrica.org/portfolio/agribusiness
+https://www.aecfafrica.org/agriculture/Seeds_for_Impact
+https://www.aecfafrica.org/index.php/portfolio/renewable-energy
+https://www.aecfafrica.org/index.php/portfolio/renewable_energy/react_ssa
+https://www.aecfafrica.org/portfolio/renewable-energy/REACT-EEP
+https://www.aecfafrica.org/index.php/portfolio/aecf_gender_lens_investment
+https://www.aecfafrica.org/index.php/portfolio/competitions
+"
+2,Alliance for a green revolution in Africa (AGRA),https://agra.org/,agriculture,,,,"Burkina Faso, Ethiopia, ghana, Ghana, Kenya, Malawi, Mali, Mozambique, Nigeria, Rwanda, Tanzania, Uganda",,"https://agra.org/
+https://agra.org/our-approach/
+https://agra.org/grants/
+https://agra.org/country-support-and-delivery/
+https://agra.org/program-development-and-innovation/
+https://agra.org/policy-and-strategic-partnerships/
+https://agra.org/where-we-work/
+https://agra.org/piata/
+https://agra.org/wp-content/uploads/2017/12/agra-kenya-final.pdf
+https://agra.org/wp-content/uploads/2018/01/agra-uganda-final.pdf
+https://agra.org/wp-content/uploads/2017/12/agra-tanzania-final.pdf
+https://agra.org/wp-content/uploads/2018/01/AGRA-Burkina-Faso-Operational-Plan-_03.11.2017-2.pdf
+https://agra.org/wp-content/uploads/2018/01/AGRA-Burkina-Faso-Operational-Plan-_03.11.2017-2.pdf"
+3,Global Innovation Fund,https://globalinnovation.fund/,"Agriculture, Democracy, Human Rights, and Governance, Economic Growth and Trade, Education, Energy, Environment, Health, Housing and Infrastructure, Humanitarian Assistance, Water Sanitation and Hygiene (WASH)",USD,50000,15000000,,,"https://globalinnovation.fund/
+https://globalinnovation.fund/who-we-are/about-us/
+https://globalinnovation.fund/what-we-do/our-approach/
+https://globalinnovation.fund/what-we-do/how-we-scale/
+https://globalinnovation.fund/what-we-do/stages-of-funding/
+https://globalinnovation.fund/what-we-do/types-of-financing/
+https://globalinnovation.fund/what-we-do/the-water-innovation-engine/
+https://globalinnovation.fund/gif-researchers/
+https://globalinnovation.fund/investments/paga/
+https://globalinnovation.fund/investments/onlinepajak/
+https://globalinnovation.fund/investments/no-means-no-worldwide/
+https://globalinnovation.fund/investments/idinsight/
+https://globalinnovation.fund/investments/ideas42/
+https://globalinnovation.fund/investments/talent-beyond-boundaries/"
+4,Acumen Fund,https://acumen.org/,Economic Growth and Trade,USD,0,3000000,"AMERICA, EAST AFRICA, INDIA, LATIN AMERICA, PAKISTAN, WEST AFRICA, LONDON, NEW YORK, SAN FRANCISCO, BOGOTA, ACCRA, KARACHI, MUMBAI, COMPANIES, NAIROBI",,"https://acumen.org/
+https://acumen.org/about/
+https://acumen.org/manifesto/
+https://acumen.org/approach/
+https://acumen.org/about/patient-capital/
+https://acumen.org/companies/sectors/agriculture/
+https://acumen.org/companies/sectors/education/
+https://acumen.org/companies/sectors/energy/ 
+https://acumen.org/companies/sectors/financial-inclusion/
+https://acumen.org/companies/sectors/health/
+https://acumen.org/companies/sectors/housing/
+https://acumen.org/companies/sectors/water-sanitation/
+https://acumen.org/companies/sectors/workforce-development/
+https://acumen.org/regions/"
+5,Bamboo Loans,https://www.bambooloans.com/,,GBP,1000,8000,,,"https://www.bambooloans.com/s/guarantor-loans/',
+'https://www.bambooloans.com/s/unsecured-loans/',
+'https://www.bambooloans.com/s/debt-consolidation-loans/',
+'https://www.bambooloans.com/s/find-a-guarantor/',
+
+
+
+"
+6,African Development Fund,https://www.afdb.org/en/about-us/corporate-information/african-development-fund-adf/,"Agriculture, Democracy, Human Rights, and Governance, Economic Growth and Trade, Education, Energy, Environment, Health, Housing and Infrastructure, Humanitarian Assistance, Water Sanitation and Hygiene (WASH)",,,,"Algeria, Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Cape Verde, Central African Republic, Chad, Comoros, Congo, Democratic Republic of Congo, C�te d�Ivoire Djibouti, Egypt, Eritrea, Equatorial Guinea, eSwatini, Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia, Libya, Madagascar, Malawi, Mali, Mauritania, Mauritius, Morocco, Mozambique, Namibia, Niger, Nigeria, Rwanda, S�o Tom� & Pr�ncipe, Senegal, Seychelles, Sierra Leone, Somalia, South Africa, South Sudan, Sudan, Tanzania, Togo, Tunisia, Uganda, Zambia, Zimbabwe",,"https://www.afdb.org/en/about-us/corporate-information/african-development-fund-adf/about-the-adf/',
+'https://www.afdb.org/en/about-us/corporate-information/african-development-fund-adf/adf-recipient-countries/',
+'https://www.afdb.org/en/about-us/corporate-information/african-development-fund-adf/adf-country-resources-allocation/',
+'https://www.afdb.org/en/projects-and-operations/financial-products/african-development-fund/debt-sustainability-and-adf-grant-eligibility/',
+'https://www.afdb.org/en/projects-and-operations/financial-products/african-development-fund/debt-sustainability-and-adf-grant-eligibility/enhanced-engagement-in-fragile-states/',
+'https://www.afdb.org/en/projects-and-operations/financial-products/african-development-fund/debt-sustainability-and-adf-grant-eligibility/non-concessional-debt-accumulation-policy/'"
+7,Willow Impact,http://www.willowimpact.com/,"
+Education, Health, Agriculture, Democracy, Human Rights, and Governance, Environment",,,,"Dubai, Nairobi",,"http://www.willowimpact.com/impact/',
+'http://www.willowimpact.com/impact/impact/impact-assessment.html',
+'http://www.willowimpact.com/for-entrepreneurs/',
+'http://www.willowimpact.com/about-us/company/policy-and-objectives.html',
+'http://www.willowimpact.com/about-us/company/our-business.html'
+"
+8,Grayghost ventures,http://www.grayghostventures.com,,USD,1000000,5000000,,,"http://www.grayghostventures.com/about/philosophy.html',
+'http://www.grayghostventures.com/about/initiatives/impactventures.html',
+'http://www.grayghostventures.com/about/history.html',
+'http://www.grayghostventures.com/portfolio/portfolioBusinessPlanSubmission.html'"
+9,Business/Partners Investing in Entrepreneurs (BPI),https://www.businesspartners.co.za/bpi,finance,USD,0,50000000,,,"https://www.businesspartners.co.za/en-za/finance-solutions/our-products',
+'https://www.businesspartners.co.za/en-za/finance-solutions/our-finance-solutions',
+'https://www.businesspartners.co.za/en-za/apply/what-you-need-to-apply',
+
+"
+10,LGT Venture Philanthropy Foundation,https://www.lgtvp.com/en/,"Agriculture, Education, Energy, Health",,,,"Africa, Asia and Pacific, Europe and Eurasia, Latin America, Caribbean, North America, Middle East and North Africa",,"https://www.lgtvp.com/en/about-us/',
+'https://www.lgtvp.com/en/what-we-do/approach/',
+'https://www.lgtvp.com/en/what-we-do/impact/',
+'https://www.lgtvp.com/en/what-we-do/sectors/',
+'https://www.lgtvp.com/en/portfolio/who-we-support/',
+'https://www.lgtvp.com/en/portfolio/portfolio-overview/'"
+11,Grofin,http://www.grofin.com/,"education, health, agriculture, manufacturing, water, energy, sanitation",USD,100000,1500000,"Africa, Middle East and North Africa",,"http://www.grofin.com/language/en/entrepreneurs/#section1_grofinmorethanfinance',
+'http://www.grofin.com/language/en/about_grofin/',
+'http://www.grofin.com/language/en/apply/'
+"
+12,Invested Development,http://investeddevelopment.com,,,,,,,"http://investeddevelopment.com/strategy/',
+'http://investeddevelopment.com/investing/',
+'http://investeddevelopment.com/current_portfolio/',
+
+"
+13,"Investisseurs &
+Partenaires (I&P)",http://www.ietp.com/en,"Health, Agriculture, Transport & Supply Chains, Workforce Development, Social & Micro Finance",USD,360000,1800000,"Guinea, Ghana, Gambia, The Gabon, Congo, Democratic Republic of the Cameroon, Burkina Faso, Benin, Mauritius, Senegal, Namibia, Mauritania, Mali, Cote d'Ivoire, Togo, Madagascar",,"http://www.ietp.com/en/content/mission',
+'http://www.ietp.com/en/content/impact-funds',
+'http://www.ietp.com/en/content/about'
+
+
+"
+14,Oikocredit,https://www.oikocredit.coop/,"Agriculture, agri. services and processing, Construction / real estate, Education, Financial services, Health care, Manufacturing, Renewable energy, Trade",EUR,50000,10000000,"Africa, Asia, Europe, North and Central America, South America",,"https://www.oikocredit.coop/what-we-do/what-we-do, https://www.oikocredit.coop/funding/loans/loans, https://www.oikocredit.coop/funding/loans/criteria, https://www.oikocredit.coop/funding/equity-investments/equity-investments,https://www.oikocredit.coop/funding/equity-investments/investment-criteria, https://www.oikocredit.coop/funding/equity-investments/equity-portfolio-overview/list?listpage=1, https://ea.oikocredit.coop/loans,https://ea.oikocredit.coop/equity, https://ea.oikocredit.coop/capacity-building,https://wa.oikocredit.coop/en/loans, https://wa.oikocredit.coop/en/equity, https://wa.oikocredit.coop/en/criteria"
+15,Persistent Energy,https://persistent.energy/,"Distributed Energy Services Companies (DESCO), Enabling Technology",,,,,,"https://persistent.energy/,https://persistent.energy/venture-building-and-capital/, https://persistent.energy/investee/solarworks/, https://persistent.energy/investee/oolu/, https://persistent.energy/investee/peg-africa/, https://persistent.energy/investee/zonful-energy/, https://persistent.energy/investee/bos/, https://persistent.energy/investee/bboxx/, https://persistent.energy/investee/devergy/, https://persistent.energy/investee/catalyst/, https://persistent.energy/investee/altech/, https://persistent.energy/investee/mines/"
+16,Terra Bella Fund,http://www.terraglobalcapital.com/terra-bella-fund,"agriculture, climate",USD,5000,100000,Colombia,,"http://www.terraglobalcapital.com/terra-bella-fund, http://www.terraglobalcapital.com/terra-bella-colombia-fund-0,http://www.terraglobalcapital.com/colombia-fund-ta-facility,http://www.terraglobalcapital.com/apply-terra-bella-colombia-technical-assistance"
+17,CDC Group plc,https://www.cdcgroup.com/en/,"Financial services, Infrastructure, Health, Manufacturing , Food and agriculture, Construction and real estate, Education",USD,5000000,150000000,"Africa, South Asia",,"https://www.cdcgroup.com/en/,https://www.cdcgroup.com/en/how-we-invest/investment-strategy/where-we-invest/,https://www.cdcgroup.com/en/how-we-invest/investment-strategy/what-we-invest-in/,https://www.cdcgroup.com/en/how-we-invest/investment-strategy/products/, https://www.cdcgroup.com/en/how-we-invest/investment-strategy/ethos/, https://www.cdcgroup.com/en/our-investments/underlying/60dxchange-inc/, https://www.cdcgroup.com/en/our-investments/investment/14-trees/,https://www.cdcgroup.com/en/our-investments/underlying/72-magadi-road-hadada/, https://www.cdcgroup.com/en/our-investments/underlying/9x-media-private-ltd/, https://www.cdcgroup.com/en/our-investments/underlying/ab-bank-zambia/"
+18,European Investment Bank (EIB),http://www.eib.org/en/index.htm,"Agriculture, Digital economy, Education, Energy, Forestry, Health, Transport, Water Sanitation and Hygiene (WASH), Environment",,,,ALL,,"http://www.eib.org/en/products/lending/index.htm, http://www.eib.org/en/products/lending/coinvestment-facilities/index.htm, http://www.eib.org/en/products/lending/microfinance/index.htm, http://www.eib.org/en/products/lending/loans/index.htm, 
+http://www.eib.org/en/products/lending/intermediated/index.htm, http://www.eib.org/en/products/lending/venture_capital/index.htm, http://www.eib.org/en/products/lending/venture-debt/index.htm, http://www.eib.org/en/products/lending/equity_funds/index.htm, http://www.eib.org/en/products/lending/equity_funds/infrastructure_equity_funds/index.htm, http://www.eib.org/en/products/lending/equity_funds/infrastructure_debt_funds/index.htm, http://www.eib.org/en/products/lending/equity_funds/environmental_funds/index.htm, http://www.eib.org/en/products/lending/equity_funds/acp_equity_funds/index.htm, http://www.eib.org/en/products/lending/equity_funds/med_equity_funds/index.htm, http://www.eib.org/en/projects/sectors/agriculture/index.htm, http://www.eib.org/en/projects/sectors/digital-economy/index.htm, http://www.eib.org/en/projects/sectors/education-and-training/index.htm, http://www.eib.org/en/projects/sectors/energy/index.htm, http://www.eib.org/en/projects/sectors/forestry/index.htm, http://www.eib.org/en/projects/sectors/health-and-life-science/index.htm, http://www.eib.org/en/projects/sectors/regional-development/index.htm,http://www.eib.org/en/projects/sectors/tens/index.htm, http://www.eib.org/en/projects/sectors/transport/index.htm, http://www.eib.org/en/projects/sectors/urban-development/index.htm, http://www.eib.org/en/projects/sectors/urban-development/city-call-for-proposal/index.htm, http://www.eib.org/en/projects/sectors/urban-development/city-call-for-proposal/index.htm"
+19,Netherlands Development Finance Company  (FMO),https://www.fmo.nl/,"Agriculture, Energy, Finance, Gender Equity, Environment, Training",EUR,0,10000000,"Africa, Asia, Latin America / Caribbean, Europe, Central Asia",,"https://www.fmo.nl/, https://www.fmo.nl/products-and-services, https://www.fmo.nl/impact, https://www.fmo.nl/impact/how-we-invest, https://www.fmo.nl/impact/how-we-measure-impact, https://www.fmo.nl/partner-with-us/massif, https://www.fmo.nl/aef, https://www.fmo.nl/infrastructure-development-fund, https://www.fmo.nl/partner-with-us/capacity-development
+"
+20,Norges Bank Investment Management,https://www.nbim.no/en/,"Equities, Fixed income, Real Estate, Climate Change and Resilience, Water Management, Children's rights,  Human Rights, Tax, Ocean sustainability",,,,ALL,,"https://www.nbim.no/en/, https://www.nbim.no/en/the-fund/about-the-fund/, https://www.nbim.no/en/organisation/governance-model/, https://www.nbim.no/en/the-fund/responsible-investment/"
