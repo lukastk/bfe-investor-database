@@ -93,7 +93,15 @@ var search = function() {
 
   var col = "sector";
   if ($("#"+col+"-search").val() !== "") {
-    col_search = $("#"+col+"-search").val().split(/[ ,]+/);
+    //col_search = $("#"+col+"-search").val().split(/[ ,]+/);
+    col_search = $("#"+col+"-search").val().split(";");
+    col_search = col_search.map( function(e) { return e.trim(); } );
+    add = [];
+    for (var i = 0; i < col_search.length; i++) {
+      if (col_search[i] in sectors_children) {
+        add = add.concat(sectors_children[col_search[i]]);
+      }
+    }
     sweep(col_search, col);
   }
 
@@ -105,7 +113,7 @@ var search = function() {
 
   var col = "country";
   if ($("#"+col+"-search").val() !== "") {
-    col_search = $("#"+col+"-search").val().match(/\\?.|^$/g).reduce((p, c) => {
+    /*col_search = $("#"+col+"-search").val().match(/\\?.|^$/g).reduce((p, c) => {
             if(c === '"'){
                 p.quote ^= 1;
             }else if(!p.quote && c === ' '){
@@ -114,8 +122,9 @@ var search = function() {
                 p.a[p.a.length-1] += c.replace(/\\(.)/,"$1");
             }
             return  p;
-        }, {a: ['']}).a;
-
+        }, {a: ['']}).a;*/
+    col_search = $("#"+col+"-search").val().split(";");
+    col_search = col_search.map( function(e) { return e.trim(); } );
     add = [];
     for (var i = 0; i < col_search.length; i++) {
       if (col_search[i] in countries_children) {

@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<h1>BfE Investor Database</h1>
+
   <script src="{{ url_for('static', filename='countries.js')}}"></script>
   <script src="{{ url_for('static', filename='sectors.js')}}"></script>
   <script src="{{ url_for('static', filename='datatree.js')}}"></script>
@@ -10,6 +12,12 @@
 
     <div class="searcher">
       <h3>Search</h3>
+
+      <p>
+        For the <i>Sector</i> and <i>Country</i> fields, you can search for multiple
+        terms by using a semi-colon ";" as a delimiter. For example, writing
+        <i>Sweden; India</i> would yield investors inside both countries.
+       </p>
 
       <input id="keywords-search" oninput="search()" type="text" class="form-control" placeholder="Keywords">
       <input id="organisation-search" oninput="search()" type="text" class="form-control" placeholder="Organisation">
