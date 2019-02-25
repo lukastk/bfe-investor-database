@@ -2,6 +2,8 @@
 
 {% block content %}
 
+  <script src="{{ url_for('static', filename='countries.js')}}"></script>
+  <script src="{{ url_for('static', filename='sectors.js')}}"></script>
   <script src="{{ url_for('static', filename='datatree.js')}}"></script>
   <script src="{{ url_for('static', filename='scripts.js')}}"></script>
   <script src="{{ url_for('static', filename='autocomplete.js')}}"></script>
@@ -26,7 +28,7 @@
         </div>
       </form>
 
-      <input id="fund-currency-search" oninput="search()" type="text" class="form-control" placeholder="Fund Currency">
+      <input id="fund-currency-search" oninput="search()" type="text" class="form-control" placeholder="Fund Currency (Default: USD)">
       <input id="fund-size_min-search" oninput="search()" pattern="\d*" type="text" class="form-control" placeholder="Fund Size Minimum">
       <input id="fund-size_max-search" oninput="search()" pattern="\d*" type="text" class="form-control" placeholder="Fund Size Maximum">
 

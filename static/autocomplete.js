@@ -4,7 +4,11 @@ function autocomplete(inp, arr) {
   var currentFocus;
   /*execute a function when someone writes in the text field:*/
   inp.addEventListener("input", function(e) {
-      var a, b, i, val = this.value;
+      var a, b, i, val_whole = this.value;
+
+      val = val_whole.split(";");
+      val = val[val.length - 1].trim();
+
       /*close any already open lists of autocompleted values*/
       closeAllLists();
       if (!val) { return false;}
@@ -29,7 +33,16 @@ function autocomplete(inp, arr) {
           /*execute a function when someone clicks on the item value (DIV element):*/
           b.addEventListener("click", function(e) {
               /*insert the value for the autocomplete text field:*/
-              inp.value = this.getElementsByTagName("input")[0].value;
+              var inpval = inp.value.split(";");
+              inpval = inpval.slice(0, inpval.length - 1);
+              if (inpval.length == 0) {
+                inpval = this.getElementsByTagName("input")[0].value;
+              } else {
+                inpval = inpval.join(";") + "; " + this.getElementsByTagName("input")[0].value;
+              }
+
+              inp.value = inpval;
+
               /*close the list of autocompleted values,
               (or any other open lists of autocompleted values:*/
               closeAllLists();
