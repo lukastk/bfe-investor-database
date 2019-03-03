@@ -37,13 +37,15 @@ def add_investor():
         country = request.form["country"]
         type = request.form["type"]
         crawl_urls = request.form["crawl_urls"]
+        description = request.form["description"]
 
-        new_investor = Investor(organisation, website, sector, fund_currency, fund_size_min, fund_size_max, country, type, crawl_urls)
+        new_investor = Investor(organisation, website, sector, fund_currency, fund_size_min, fund_size_max, country, type, crawl_urls, description)
+        new_investor_id = new_investor.id
         db_session.add(new_investor)
         db_session.commit()
 
         data = {
-            "id": new_investor.id,
+            "id": new_investor_id,
             "organisation": organisation,
             "website": website,
             "sector": sector,
@@ -52,7 +54,8 @@ def add_investor():
             "fund_size_max": fund_size_max,
             "country" : country,
             "type" : type,
-            "crawl_urls" : crawl_urls}
+            "crawl_urls" : crawl_urls,
+            "description" : description}
 
         pusher_client.trigger('table', 'new-record', {'data': data })
 
@@ -72,6 +75,7 @@ def update_record(id):
         fund_size_max = request.form["fund_size_max"]
         type = request.form["type"]
         crawl_urls = request.form["crawl_urls"]
+        description = request.form["description"]
 
         update_investor = Investor.query.get(id)
         update_investor.organisation = organisation
@@ -82,6 +86,7 @@ def update_record(id):
         update_investor.fund_size_max = fund_size_max
         update_investor.type = type
         update_investor.crawl_urls = crawl_urls
+        update_investor.description = description
 
         db_session.commit()
 
@@ -94,7 +99,8 @@ def update_record(id):
             "fund_size_min": fund_size_min,
             "fund_size_max": fund_size_max,
             "type": type,
-            "crawl_urls": crawl_urls}
+            "crawl_urls": crawl_urls,
+            "description" : description}
 
         pusher_client.trigger('table', 'update-record', {'data': data })
 

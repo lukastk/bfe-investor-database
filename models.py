@@ -15,9 +15,11 @@ class Investor(Base):
     country = Column(String(1000))
     type = Column(String(1000))
     crawl_urls = Column(String(1000))
+    description = Column(String(10000))
 
     def __init__(self, organisation=None, website=None, sector=None, fund_currency=None,
-            fund_size_min=None, fund_size_max=None, country=None, type=None, crawl_urls=None):
+            fund_size_min=None, fund_size_max=None, country=None, type=None, crawl_urls=None, description=None):
+        print("ss", self.id)
         self.organisation = organisation
         self.website = website
         self.sector = sector
@@ -27,6 +29,7 @@ class Investor(Base):
         self.country = country
         self.type = type
         self.crawl_urls = crawl_urls
+        self.description = description
 
     def __repr__(self):
         return '<Organisation %r>' % (self.organisation)

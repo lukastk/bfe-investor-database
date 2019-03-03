@@ -29,6 +29,9 @@
         <div class="form-group">
             <input type="text" class="form-control" name="crawl_urls" value="{{ data.crawl_urls }}">
         </div>
+        <div class="form-group">
+            <textarea name="description" class="form-control" rows="8" cols="80">{{ data.description }}</textarea>
+        </div>
 
         <button type="submit" class="btn btn-block btn-primary">Update</button>
     </form>

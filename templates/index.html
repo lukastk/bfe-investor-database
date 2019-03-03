@@ -63,6 +63,7 @@
                         <th scope="col">Type</th>
                         <th scope="col">Country</th>
                         <th scope="col">Fund size</th>
+                        <th scope="col">Description</th>
 			                  <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -74,8 +75,10 @@
                         <td class="type-data"> {{investor.type }} </td>
                         <td class="country-data"> {{investor.country }} </td>
                         <td class="fund-data" data-fundc="{{investor.fund_currency}}" data-fundmin="{{investor.fund_size_min}}" data-fundmax="{{investor.fund_size_max}}"> {{investor.fund_currency}} {{investor.fund_size_min}}-{{investor.fund_size_max}} </td>
+                        <td class="description-data"> {{investor.description }} </td>
+
                         <td> <a href="/edit/{{ investor.id }}">Edit</a>
-                          <a class="nonhref" onclick="if (confirm('d')) { delete_entry({{ investor.id }}); $('#{{ investor.id }}').remove();}">Delete</a> </td>
+                          <a class="nonhref" onclick="if (confirm('Delete {{ investor.organisation }}?')) { delete_entry({{ investor.id }}); $('#{{ investor.id }}').remove();}">Delete</a> </td>
 
                         <script>
                           document.getElementById("{{ investor.id }}").childNodes[9].innerHTML = "{{investor.fund_currency}} " + numToLabel({{investor.fund_size_min}}) + "-" + numToLabel({{investor.fund_size_max}});
