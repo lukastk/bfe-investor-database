@@ -7,12 +7,31 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bfe_style.css') }}">
+
+    <script src="{{ url_for('static', filename='jquery-3.3.1.min.js')}}"></script>
+
     <title>BfE Investor Database</title>
   </head>
+
   <body>
-      <div class="container h-100">
+
+      <div class="container-fluid h-100">
+
+        <div class="bfe-header row">
+          <div class="offset-md-2 col-md-10 col-sm-6 mx-auto">
+            <div id="bfetitle">
+              <a href="."><img src="{{ url_for('static', filename='bfelogo.webp') }}"></a>
+              <div>
+                <a href="."><span style="font-size: 30px">Bridges for Enterprise</span> <br>
+                Investor Database</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="row h-100">
-            <div class="col-md-12 col-sm-12 mx-auto">
+            <div class="offset-md-2 col-md-10 col-sm-6 mx-auto">
                 <div class="h-100 justify-content-center">
                     {% block content %}  {% endblock %}
                 </div>

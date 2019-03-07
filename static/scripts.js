@@ -4,25 +4,28 @@ var sweep = function(search_words, col="") {
   $("#investors tbody tr").each(function() {
     var hasKey = false;
 
-    cols = $(this).children();
-    if (col !== "") {
-      cols = $(this).find("." + col + "-data")
-    }
+    var row_id = parseInt($(this).attr("id"));
 
-    cols.each(function() {
-      if (col !== "" && ($(this).text().replace(/ /g,'') === "" || $(this).text().toLowerCase().replace(/ /g,'') === "all")) {
+    for (var i = 0; i < all_columns.length; i++) {
+      col_name = all_columns[i];
+
+      if (col !== "" && col_name !== (col+"-data")) {
+        continue;
+      }
+
+      if (col !== "" && (row_data[row_id][col_name].replace(/ /g,'') === "" || row_data[row_id][col_name].toLowerCase().replace(/ /g,'') === "all")) {
         hasKey = true;
       } else {
-        rowwords = $(this).text().replace(/\n/ig, '').split(/[ ,]+/);
+        rowwords = row_data[row_id][col_name].replace(/\n/ig, '').split(/[ ,]+/);
         rowwords = rowwords.map(function (e) { return e.toLowerCase(); });
 
-        for (var i = 0; i < search_words.length; i++) {
-          if (rowwords.indexOf(search_words[i]) >= 0) {
+        for (var j = 0; j < search_words.length; j++) {
+          if (rowwords.indexOf(search_words[j]) >= 0) {
             hasKey = true;
           }
         }
       }
-    });
+    }
 
     if (hasKey) {
       $(this).css("display","");
@@ -179,4 +182,52 @@ function numToLabel (labelValue) {
 
     : Math.abs(Number(labelValue));
 
+}
+
+var clean_columns = ["sector-data", "type-data", "country-data"];
+var clean_data_text = function(row_id) {
+  for (var i = 0; i < clean_columns.length; i++) {
+      col = clean_columns[i];
+      txt = $("#" + row_id + " " + "." + col).text();
+
+      txt = txt.trim();
+      txt = txt.replace("\n", " ");
+  }
+}
+
+var is_shortened = {};
+var row_data = {};
+var all_columns = ["organisation-data", "description-data", "sector-data", "type-data", "country-data", "fund-data", "competition-available-data"]
+var shorten_columns =             ["description-data", "sector-data", "type-data", "country-data"];
+var shorten_columns_text_length = [100,                 10,           10,           10];
+
+var store_row_data = function(row_id) {
+  row_data[row_id] = {};
+  for (var i = 0; i < all_columns.length; i++) {
+      col = all_columns[i];
+      row_data[row_id][col] = $("#" + row_id + " " + "." + col).text();
+  }
+}
+
+var set_shortened_text = function(row_id, shorten) {
+  is_shortened[row_id] = shorten;
+  for (var i = 0; i < shorten_columns.length; i++) {
+      col = shorten_columns[i];
+      txt = row_data[row_id][col];
+      max_text_length = shorten_columns_text_length[i];
+
+      if (shorten) {
+        if (txt.length > max_text_length) {
+          $("#" + row_id + " " + "." + col).text( txt.slice(0, max_text_length) + "..." )
+        }
+      } else {
+        $("#" + row_id + " " + "." + col).text( txt )
+      }
+  }
+
+  if (shorten) {
+    $("#"+row_id + " .see-more-button").text("See more");
+  } else {
+    $("#"+row_id + " .see-more-button").text("See less");
+  }
 }

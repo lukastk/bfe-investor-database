@@ -1,0 +1,143 @@
+body {
+  margin: 0px;
+  font-family: 'Avenir Book';
+  color: #393F44;
+  background-color: #e5f0f1;
+}
+
+.bfe-header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #FFF;
+}
+
+#bfetitle {
+  font-family: 'Avenir Heavy';
+  font-size: 20px;
+  color: #393F44;
+  overflow: hidden;
+  width:100%;
+}
+#bfetitle a {
+  text-decoration: none;
+  color: #393F44;
+}
+#bfetitle img{
+  height: 60px;
+  float: left;
+  padding-right: 12px;
+}
+
+#description-form textarea {
+  width:100%;
+  height: 300px;
+}
+
+#results-table table {
+  background-color: #FFF;
+  border-collapse: collapse;
+  width: 100%;
+  border: none;
+  margin-bottom: 10px;
+}
+
+#results-tabe th {
+  font-family: 'Avenir Heavy';
+}
+
+#results-table td, #results-table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    vertical-align: top;
+    border: none;
+    vertical-align: middle;
+}
+
+#results-table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.description-box {
+  padding-top: 20px;
+  display: none;
+  text-align: justify;
+  font-style: italic;
+}
+
+textarea {
+  font-family: 'Avenir Book';
+  height:auto;
+  max-width:100%;
+  width:100%;
+  background:#fff;
+  border-radius:3px;
+  line-height:2em;
+  border:none;
+  box-shadow:0px 0px 5px 1px rgba(0,0,0,0.1);
+  padding:10px;
+  margin-bottom: 10px;
+}
+
+.sbutton {
+  border: solid #393F44 1px;
+  background-color: #00000000;
+  border-radius: 999px;
+  font-family: 'Avenir Book';
+  font-size: 14px;
+  padding:10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.sbutton:hover {
+  background-color: #393F44;
+  color: #FFF;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+
+.sbutton-slim {
+  border: solid #393F44 1px;
+  background-color: #00000000;
+  border-radius: 999px;
+  font-family: 'Avenir Book';
+  font-size: 14px;
+  padding:5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.sbutton-slim:hover {
+  background-color: #393F44;
+  color: #FFF;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+}
+
+@font-face {
+  font-family: "Avenir Heavy";
+  src: url("./fonts/AvenirLTStd-Heavy.otf");
+}
+
+@font-face {
+  font-family: "Avenir Book";
+  src: url("./fonts/AvenirLTStd-Book.otf");
+}

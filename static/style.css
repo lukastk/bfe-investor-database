@@ -91,3 +91,11 @@ a.nonhref:hover {
   background-color: DodgerBlue !important;
   color: #ffffff;
 }
+
+.table td, .table th {
+  padding: .2rem;
+}
+
+.table thead th {
+  vertical-align: middle;
+}

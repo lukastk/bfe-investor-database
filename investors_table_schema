@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS investors (
+  id INTEGER NOT NULL,
+  "organisation" TEXT,
+  "website" TEXT,
+  "sector" TEXT,
+  "fund_currency" TEXT,
+  "fund_size_min" INT,
+  "fund_size_max" INT,
+  "country" TEXT,
+  "type" TEXT,
+  "crawl_urls" TEXT,
+  "description" TEXT,
+  PRIMARY KEY (id)
+);
+
