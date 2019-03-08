@@ -25,8 +25,21 @@ var sweep = function(search_words, col="") {
         rowwords = rowwords.map(function (e) { return e.toLowerCase(); });
 
         for (var j = 0; j < search_words.length; j++) {
-          if (!(rowwords.indexOf(search_words[j]) >= 0)) {
-            hasKey = false;
+          if (typeof(search_words[j]) == "object") {
+            var isInList = false;
+            for (var k = 0; k < search_words[j].length; k++) {
+              if (!(rowwords.indexOf(search_words[j][k]) >= 0)) {
+                isInList = true;
+              }
+            }
+
+            if (!isInList) {
+              hasKey = false;
+            }
+          } else {
+            if (!(rowwords.indexOf(search_words[j]) >= 0)) {
+              hasKey = false;
+            }
           }
         }
       }
@@ -117,12 +130,17 @@ var search = function() {
   var col = "sector";
   if ($("#"+col+"-search").val() !== "") {
     //col_search = $("#"+col+"-search").val().split(/[ ,]+/);
-    col_search = $("#"+col+"-search").val().split(";");
-    col_search = col_search.map( function(e) { return e.trim(); } );
-    add = [];
+    col_search_0 = $("#"+col+"-search").val().split(";");
+    col_search_0 = col_search_0.map( function(e) { return e.trim(); } );
+    col_search = [];
+
     for (var i = 0; i < col_search.length; i++) {
-      if (col_search[i] in sectors_children) {
-        add = add.concat(sectors_children[col_search[i]]);
+      if (col_search_0[i] in sectors_children) {
+        entry = sectors_children[col_search[i]].slice()
+        entry.push(col_search_0[i])
+        col_search.push(entry);
+      } else {
+        col_search.push([col_search_0[i]])
       }
     }
     sweep(col_search, col);
@@ -146,16 +164,20 @@ var search = function() {
             }
             return  p;
         }, {a: ['']}).a;*/
-    col_search = $("#"+col+"-search").val().split(";");
-    col_search = col_search.map( function(e) { return e.trim(); } );
-    add = [];
+    col_search_0 = $("#"+col+"-search").val().split(";");
+    col_search_0 = col_search_0.map( function(e) { return e.trim(); } );
+    col_search = [];
+
     for (var i = 0; i < col_search.length; i++) {
-      if (col_search[i] in countries_children) {
-        add = add.concat(countries_children[col_search[i]]);
+      if (col_search_0[i] in countries_children) {
+        entry = countries_children[col_search[i]].slice()
+        entry.push(col_search_0[i])
+        col_search.push(entry);
+      } else {
+        col_search.push([col_search_0[i]])
       }
     }
 
-    col_search = col_search.concat(add);
     sweep(col_search, col);
   }
 
