@@ -1,6 +1,8 @@
 var sweep = function(search_words, col="") {
   search_words = search_words.map(function(e) { return e.toLowerCase(); });
 
+  put_rows_last = []
+
   $("#investors tbody tr").each(function() {
     var hasKey = false;
 
@@ -13,7 +15,10 @@ var sweep = function(search_words, col="") {
         continue;
       }
 
-      if (col !== "" && (row_data[row_id][col_name].replace(/ /g,'') === "" || row_data[row_id][col_name].toLowerCase().replace(/ /g,'') === "all")) {
+      if (col !== "" && row_data[row_id][col_name].replace(/ /g,'') === "") {
+        hasKey = true;
+        put_rows_last.push($(this))
+      } else if (col !== "" && row_data[row_id][col_name].toLowerCase().replace(/ /g,'') === "all") {
         hasKey = true;
       } else {
         rowwords = row_data[row_id][col_name].replace(/\n/ig, '').split(/[ ,]+/);
@@ -33,6 +38,12 @@ var sweep = function(search_words, col="") {
       $(this).css("display","none");
     }
   });
+
+  for (var i = 0; i < put_rows_last.length; i++) {
+    var row = put_rows_last[i];
+    row.remove();
+    $("#investors tr:last").after(row);
+  }
 }
 
 var currency_to_USD = {
@@ -44,6 +55,8 @@ var currency_to_USD = {
 var fund_sweep = function(currency, fmin, fmax) {
   fmin = fmin * currency_to_USD[currency.toUpperCase()];
   fmax = fmax * currency_to_USD[currency.toUpperCase()];
+
+  put_rows_last = [];
 
   $("#investors tbody tr").each(function() {
     try {
@@ -58,6 +71,7 @@ var fund_sweep = function(currency, fmin, fmax) {
 
       if (isNaN(row_min) || isNaN(row_max)) {
         hasKey = true;
+        put_rows_last.push($(this))
       } else {
         row_min = row_min * currency_to_USD[row_currency.toUpperCase()];
         row_max = row_max * currency_to_USD[row_currency.toUpperCase()];
@@ -76,6 +90,12 @@ var fund_sweep = function(currency, fmin, fmax) {
       console.log(err)
     }
   });
+
+  for (var i = 0; i < put_rows_last.length; i++) {
+    var row = put_rows_last[i];
+    row.remove();
+    $("#investors tr:last").after(row);
+  }
 }
 
 var search = function() {
