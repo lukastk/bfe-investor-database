@@ -4,7 +4,7 @@ var sweep = function(search_words, col="") {
   put_rows_last = []
 
   $("#investors tbody tr").each(function() {
-    var hasKey = false;
+    var hasKey = true;
 
     var row_id = parseInt($(this).attr("id"));
 
@@ -25,8 +25,8 @@ var sweep = function(search_words, col="") {
         rowwords = rowwords.map(function (e) { return e.toLowerCase(); });
 
         for (var j = 0; j < search_words.length; j++) {
-          if (rowwords.indexOf(search_words[j]) >= 0) {
-            hasKey = true;
+          if (!(rowwords.indexOf(search_words[j]) >= 0)) {
+            hasKey = false;
           }
         }
       }
