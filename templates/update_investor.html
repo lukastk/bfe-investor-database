@@ -33,6 +33,10 @@
             <textarea name="description" class="form-control" rows="8" cols="80">{{ data.description }}</textarea>
         </div>
 
+        <div class="form-group">
+            <input name="competition_available" type="text" class="form-control" value="{{ data.competition_available }}">
+        </div>
+
         <button type="submit" class="btn btn-block btn-primary">Update</button>
     </form>
 {% endblock %}

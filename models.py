@@ -16,9 +16,10 @@ class Investor(Base):
     type = Column(String(1000))
     crawl_urls = Column(String(1000))
     description = Column(String(10000))
+    competition_available = Column(String(1000))
 
     def __init__(self, organisation=None, website=None, sector=None, fund_currency=None,
-            fund_size_min=None, fund_size_max=None, country=None, type=None, crawl_urls=None, description=None):
+            fund_size_min=None, fund_size_max=None, country=None, type=None, crawl_urls=None, description=None, competition_available=None):
         print("ss", self.id)
         self.organisation = organisation
         self.website = website
@@ -30,6 +31,7 @@ class Investor(Base):
         self.type = type
         self.crawl_urls = crawl_urls
         self.description = description
+        self.competition_available = competition_available
 
     def __repr__(self):
         return '<Organisation %r>' % (self.organisation)

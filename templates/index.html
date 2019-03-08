@@ -78,7 +78,7 @@
                         <td style="width: 5%" style="width: 5%" class="type-data"> {{investor.type }} </td>
                         <td style="width: 5%" class="country-data"> {{investor.country }} </td>
                         <td style="width: 10%" class="fund-data" data-fundc="{{investor.fund_currency}}" data-fundmin="{{investor.fund_size_min}}" data-fundmax="{{investor.fund_size_max}}"> {{investor.fund_currency}} {{investor.fund_size_min}}-{{investor.fund_size_max}} </td>
-                        <td style="width: 5%" class="competition-available-data"> XXXX </td>
+                        <td style="width: 5%" class="competition-available-data">{{ investor.competition_available }}</td>
 
                         <td style="width: 5%">
                           <a href="/edit/{{ investor.id }}"><button type="submit" class="btn btn-sm btn-dark" style="width:100%; margin-bottom: 3px;">Edit</button></a> <br>

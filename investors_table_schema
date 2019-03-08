@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS investors (
   "type" TEXT,
   "crawl_urls" TEXT,
   "description" TEXT,
+  "competition_available" INT,
   PRIMARY KEY (id)
 );
 

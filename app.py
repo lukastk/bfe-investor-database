@@ -38,8 +38,9 @@ def add_investor():
         type = request.form["type"]
         crawl_urls = request.form["crawl_urls"]
         description = request.form["description"]
+        competition_available = request.form["competition_available"]
 
-        new_investor = Investor(organisation, website, sector, fund_currency, fund_size_min, fund_size_max, country, type, crawl_urls, description)
+        new_investor = Investor(organisation, website, sector, fund_currency, fund_size_min, fund_size_max, country, type, crawl_urls, description, competition_available)
         new_investor_id = new_investor.id
         db_session.add(new_investor)
         db_session.commit()
@@ -55,7 +56,8 @@ def add_investor():
             "country" : country,
             "type" : type,
             "crawl_urls" : crawl_urls,
-            "description" : description}
+            "description" : description,
+            "competition_available" : competition_available}
 
         pusher_client.trigger('table', 'new-record', {'data': data })
 
@@ -76,6 +78,7 @@ def update_record(id):
         type = request.form["type"]
         crawl_urls = request.form["crawl_urls"]
         description = request.form["description"]
+        competition_available = request.form["competition_available"]
 
         update_investor = Investor.query.get(id)
         update_investor.organisation = organisation
@@ -87,6 +90,7 @@ def update_record(id):
         update_investor.type = type
         update_investor.crawl_urls = crawl_urls
         update_investor.description = description
+        update_investor.competition_available = competition_available
 
         db_session.commit()
 
@@ -100,7 +104,8 @@ def update_record(id):
             "fund_size_max": fund_size_max,
             "type": type,
             "crawl_urls": crawl_urls,
-            "description" : description}
+            "description" : description,
+            "competition_available" : competition_available}
 
         pusher_client.trigger('table', 'update-record', {'data': data })
 
