@@ -6,6 +6,10 @@ var sweep = function(search_words, col="") {
   $("#investors tbody tr").each(function() {
     var hasKey = true;
 
+    if (col === "") {
+      hasKey = false;
+    }
+
     var row_id = parseInt($(this).attr("id"));
 
     for (var i = 0; i < all_columns.length; i++) {
@@ -37,8 +41,15 @@ var sweep = function(search_words, col="") {
               hasKey = false;
             }
           } else {
-            if (!(rowwords.indexOf(search_words[j]) >= 0)) {
-              hasKey = false;
+            console.log(rowwords, search_words)
+            if (col !== "") {
+              if (!(rowwords.indexOf(search_words[j]) >= 0)) {
+                hasKey = false;
+              }
+            } else {
+              if ((rowwords.indexOf(search_words[j]) >= 0)) {
+                hasKey = true;
+              }
             }
           }
         }
