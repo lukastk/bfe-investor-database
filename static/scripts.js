@@ -1,6 +1,12 @@
 var sweep = function(search_words, col="") {
-  search_words = search_words.map(function(e) { return e.toLowerCase(); });
-
+  search_words = search_words.map(function(e) {
+    if (typeof(e) == "object") {
+      return e.map(function(ee) { return ee.toLowerCase() })
+    } else {
+      return e.toLowerCase();
+    }
+  });
+  console.log(search_words)
   put_rows_last = []
 
   $("#investors tbody tr").each(function() {
@@ -29,19 +35,19 @@ var sweep = function(search_words, col="") {
         rowwords = rowwords.map(function (e) { return e.toLowerCase(); });
 
         for (var j = 0; j < search_words.length; j++) {
+
           if (typeof(search_words[j]) == "object") {
             var isInList = false;
             for (var k = 0; k < search_words[j].length; k++) {
-              if (!(rowwords.indexOf(search_words[j][k]) >= 0)) {
+              if ((rowwords.indexOf(search_words[j][k]) >= 0)) {
                 isInList = true;
               }
             }
-
+            console.log(isInList)
             if (!isInList) {
               hasKey = false;
             }
           } else {
-            console.log(rowwords, search_words)
             if (col !== "") {
               if (!(rowwords.indexOf(search_words[j]) >= 0)) {
                 hasKey = false;
@@ -145,9 +151,9 @@ var search = function() {
     col_search_0 = col_search_0.map( function(e) { return e.trim(); } );
     col_search = [];
 
-    for (var i = 0; i < col_search.length; i++) {
+    for (var i = 0; i < col_search_0.length; i++) {
       if (col_search_0[i] in sectors_children) {
-        entry = sectors_children[col_search[i]].slice()
+        entry = sectors_children[col_search_0[i]].slice()
         entry.push(col_search_0[i])
         col_search.push(entry);
       } else {
@@ -179,15 +185,16 @@ var search = function() {
     col_search_0 = col_search_0.map( function(e) { return e.trim(); } );
     col_search = [];
 
-    for (var i = 0; i < col_search.length; i++) {
+    for (var i = 0; i < col_search_0.length; i++) {
       if (col_search_0[i] in countries_children) {
-        entry = countries_children[col_search[i]].slice()
+        entry = countries_children[col_search_0[i]].slice()
         entry.push(col_search_0[i])
         col_search.push(entry);
       } else {
         col_search.push([col_search_0[i]])
       }
     }
+
 
     sweep(col_search, col);
   }
