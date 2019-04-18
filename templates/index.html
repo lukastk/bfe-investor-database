@@ -44,6 +44,14 @@
       <button onclick="search()" class="btn btn-block btn-dark">Search</button>
       <br>
       <a href="/add_investor"><button type="submit" class="btn btn-block btn-dark">Add new investor</button></a>
+      <br>
+
+      <b>Add entries from a CSV file</b>
+      <form action = "/upload_csv_file" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
     </div>
 
     <script>

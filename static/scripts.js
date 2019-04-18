@@ -291,3 +291,7 @@ var set_shortened_text = function(row_id, shorten) {
     $("#"+row_id + " .see-more-button").text("See less");
   }
 }
+
+var add_from_CSV = function() {
+  
+}

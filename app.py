@@ -4,6 +4,8 @@ from database import db_session
 from models import Investor
 from datetime import datetime
 import os
+import csv
+from io import StringIO
 
 app = Flask(__name__)
 
@@ -121,6 +123,65 @@ def delete_entry(id):
     Investor.query.filter_by(id=id).delete()
     db_session.commit()
     return "success"
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/upload_csv_file', methods=['POST'])
+def upload_csv_file():
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        csvf = StringIO(file.read().decode())
+
+        reader = csv.DictReader(csvf, delimiter=',')
+        data = [row for row in reader]
+
+        try:
+            for row in data:
+                organisation = row["Organisation"]
+                website = row["Website"]
+                sector = row["Sector"]
+                fund_currency = row["Fund Currency"]
+                fund_size_min = row["Fund Size (Min)"]
+                fund_size_max = row["Fund Size (Max)"]
+                country = row["Country"]
+                type = row["Type"]
+                crawl_urls = row["Crawl URLs"]
+                description = row["Description"]
+                competition_available = row["Competition Available"]
+
+                new_investor = Investor(organisation, website, sector, fund_currency, fund_size_min, fund_size_max, country, type, crawl_urls, description, competition_available)
+                new_investor_id = new_investor.id
+                db_session.add(new_investor)
+                db_session.commit()
+        except:
+            raise
+            return """
+                <html>
+                <head><title>Wrong format of CSV file</title></head>
+                <body>
+                Insertion failed because the CSV file is wrongly formatted. The CSV file should contain the following columns:
+                  "Organisation",
+                  "Website",
+                  "Sector",
+                  "Fund Currency",
+                  "Fund Size (Min)",
+                  "Fund Size (Max)",
+                  "Country",
+                  "Type",
+                  "Crawl URLs",
+                  "Description",
+                  "Competition Available".
+                </body>
+                </html>
+                """
+
+        return redirect("/")
 
 # run Flask app
 if __name__ == "__main__":
